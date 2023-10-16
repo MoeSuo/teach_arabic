@@ -1,6 +1,5 @@
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Navbar from "../../components/navbar/navBar";
 
 function Profile() {
   const { data: session } = useSession();
@@ -13,8 +12,6 @@ function Profile() {
 
   return (
     <>
-          <Navbar />
-
       <div className="flex items-center justify-center h-screen flex-col">
         <h1 className="text-4xl font-bold uppercase">User Profile</h1>
         <div>
