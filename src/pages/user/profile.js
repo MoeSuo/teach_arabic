@@ -1,4 +1,6 @@
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 function Profile() {
@@ -21,6 +23,11 @@ function Profile() {
           <h4 className="text-4xl font-light uppercase justify-center">
             {session?.user.email}
           </h4>
+          {/* <Image 
+            src={session?.user.image}
+            width={100}
+            height={100}
+          /> */}
           <br /> <br /> <br />{" "}
         </div>
         <button
@@ -29,6 +36,14 @@ function Profile() {
         >
           Sign out
         </button>
+
+        <Link
+                  href="/"
+                  className="link text-[#5850EC]"
+                >
+                  Go back
+                </Link>
+
       </div>
     </>
   );

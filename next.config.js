@@ -4,6 +4,7 @@ const nextConfig = {
     domains: [
       "images.unsplash.com",
       "images.google.com",
+      'avatars.githubusercontent.com', // Add the problematic hostname here
     ],
    
   },
