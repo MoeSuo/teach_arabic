@@ -12,6 +12,8 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.11.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -29,6 +31,7 @@
     "promise-fs": "^2.1.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
     "react-icons": "^4.11.0",
     "react-toastify": "^9.1.3"
   },

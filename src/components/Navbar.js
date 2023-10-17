@@ -27,12 +27,12 @@ export default function Example() {
   // session check
 
   const { data: session } = useSession(); // Get session data using useSession hook
-  console.log("Session Data:", session);
+  // console.log("Session Data:", session);
   const imageUrl =
     session?.user?.image ||
     // session?.user?.name[0]
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
-  console.log("Image URL:", imageUrl);
+  // console.log("Image URL:", imageUrl);
 
   // session check
   return (

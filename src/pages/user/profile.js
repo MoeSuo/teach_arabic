@@ -1,4 +1,6 @@
 import UserProfileForm from "@/components/UserProfileForm";
+import UploadImage from "@/components/uploadImage";
+import Uploadform from "@/components/uploadform";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -7,10 +9,11 @@ function Profile() {
   const { data: session } = useSession();
   const router = useRouter();
 
-  function handleSignOut() {
-    signOut({ callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_URL });
-  }
+  // function handleSignOut() {
+  //   signOut({ callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_URL });
+  // }
 
+  // console.log(session);
   return (
     <>
       {session ? (
@@ -27,8 +30,13 @@ function Profile() {
             </h4>
             <br />
             <h4 className="text-center font-light uppercase justify-center">
-              {session.user.name}
+              {session.user.name} 
             </h4>
+            <br /> <br /> <br />{" "}
+            <h4 className="text-center font-light uppercase justify-center">
+               {session.user.email}
+            </h4>
+            <img src={session.user.image}/>
             <br /> <br /> <br />{" "}
           </div>
           {/* <button
@@ -61,7 +69,7 @@ function Profile() {
         </div>
       )}
 
-      <div className="flex items-center justify-center  flex-col mx-14 text-center">
+      {/* <div className="flex items-center justify-center  flex-col mx-14 text-center">
         <form className="space-y-4 w-full">
           <div className="w-full bg-gray-50 p-4">
             <label className="block text-sm font-medium text-gray-600 text-left">
@@ -117,8 +125,10 @@ function Profile() {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
       {/* <UserProfileForm /> */}
+      {/* <UploadImage /> */}
+      {/* <Uploadform /> */}
     </>
   );
 }

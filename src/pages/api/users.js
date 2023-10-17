@@ -18,6 +18,7 @@ export default async function handle(req, res) {
           return res.status(200).json(user);
         } else {
           const users = await getAllUsers();
+          console.log(users);
           return res.json(users);
         }
       }
@@ -26,11 +27,28 @@ export default async function handle(req, res) {
         const user = await createUser(email, name, image);
         return res.json(user);
       }
+     
+      
       case "PUT": {
-        const { id, ...updateData } = req.body;
-        const user = await updateUser(id, updateData);
-        return res.json(user);
+        const { id, image, ...updateData } = req.body;
+
+        // Handle image data if it's provided
+        let imageData = null;
+        if (image) {
+          // Assuming image is a Base64 string, store it directly as a string
+          imageData = image;
+        }
+
+        // Merge updateData with image data if available
+        const updatedUser = await updateUser(id, {
+          ...updateData,
+          image: imageData, // Store the Base64 image data as a string
+        });
+
+        return res.json(updatedUser);
       }
+
+      
       case "DELETE": {
         const id = req.query.id;
         const user = await deleteUser(id);
