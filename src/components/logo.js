@@ -5,12 +5,13 @@ const Logo = () => {
   return (
     <Link href="/">
       <Image
-        className="h-8 w-auto" 
-        src="/vercel.svg"
-        alt="Your Company"
-        width={100}
-        height={100}
+        className="h-10 w-auto" 
+        src="/opiarabia1.png"
+        alt="Oppi Arabia"
+        width={200}
+        height={200}
       />
+       {/* <h1 className="text-white font-bold text-3xl">TALKFINN</h1> */}
     </Link>
   );
 };
