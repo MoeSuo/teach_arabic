@@ -1,6 +1,5 @@
 import UserProfileForm from "@/components/UserProfileForm";
 import UploadImage from "@/components/uploadImage";
-import Uploadform from "@/components/uploadform";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -127,7 +126,7 @@ function Profile() {
         </form>
       </div> */}
       {/* <UserProfileForm /> */}
-      {/* <UploadImage /> */}
+      <UploadImage />
       {/* <Uploadform /> */}
     </>
   );
