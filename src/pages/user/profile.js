@@ -1,5 +1,3 @@
-import UserProfileForm from "@/components/UserProfileForm";
-import UploadImage from "@/components/uploadImage";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -22,20 +20,23 @@ function Profile() {
           className="flex items-center justify-center  flex-col"
         >
           {/* <h1 className="text-4xl font-bold uppercase">User Profile</h1> */}
-          <div>
+          <div className=" ">
             <br /> <br /> <br /> <br />
             <h4 className="text-4xl font-bold uppercase text-center">
               Welcome:
             </h4>
             <br />
             <h4 className="text-center font-light uppercase justify-center">
-              {session.user.name} 
+              {session.user.name}
             </h4>
             <br /> <br /> <br />{" "}
             <h4 className="text-center font-light uppercase justify-center">
-               {session.user.email}
+              {session.user.email}
             </h4>
-            <img src={session.user.image}/>
+            <div className=" flex justify-center mt-8">
+
+            <img className="items-center " src={session.user.image} />
+            </div>
             <br /> <br /> <br />{" "}
           </div>
           {/* <button
@@ -125,9 +126,6 @@ function Profile() {
           </div>
         </form>
       </div> */}
-      {/* <UserProfileForm /> */}
-      <UploadImage />
-      {/* <Uploadform /> */}
     </>
   );
 }
